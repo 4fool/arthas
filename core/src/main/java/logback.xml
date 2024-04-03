@@ -36,6 +36,24 @@
         </rollingPolicy>
     </appender>
 
+    <appender name="test" class="com.alibaba.arthas.deps.ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/home/admin/logs/arthas/test.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} -%msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="com.alibaba.arthas.deps.ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>/home/admin/logs/arthas/test.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <maxHistory>2</maxHistory>
+            <maxFileSize>200MB</maxFileSize>
+            <totalSizeCap>1024MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="test" level="INFO" additivity="false">
+        <appender-ref ref="test" />
+    </logger>
+
     <logger name="result" level="INFO" additivity="false">
         <appender-ref ref="RESULT" />
     </logger>

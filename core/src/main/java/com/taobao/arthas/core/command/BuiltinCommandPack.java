@@ -9,16 +9,7 @@ import com.alibaba.arthas.deps.org.slf4j.LoggerFactory;
 import com.taobao.arthas.core.command.basic1000.*;
 import com.taobao.arthas.core.command.hidden.JulyCommand;
 import com.taobao.arthas.core.command.hidden.ThanksCommand;
-import com.taobao.arthas.core.command.klass100.ClassLoaderCommand;
-import com.taobao.arthas.core.command.klass100.DumpClassCommand;
-import com.taobao.arthas.core.command.klass100.GetStaticCommand;
-import com.taobao.arthas.core.command.klass100.JadCommand;
-import com.taobao.arthas.core.command.klass100.MemoryCompilerCommand;
-import com.taobao.arthas.core.command.klass100.OgnlCommand;
-import com.taobao.arthas.core.command.klass100.RedefineCommand;
-import com.taobao.arthas.core.command.klass100.RetransformCommand;
-import com.taobao.arthas.core.command.klass100.SearchClassCommand;
-import com.taobao.arthas.core.command.klass100.SearchMethodCommand;
+import com.taobao.arthas.core.command.klass100.*;
 import com.taobao.arthas.core.command.logger.LoggerCommand;
 import com.taobao.arthas.core.command.monitor200.DashboardCommand;
 import com.taobao.arthas.core.command.monitor200.HeapDumpCommand;
@@ -124,6 +115,7 @@ public class BuiltinCommandPack implements CommandResolver {
         commandClassList.add(JettyCommand.class);
         commandClassList.add(SleepCommand.class);
         commandClassList.add(TestCommand.class);
+        commandClassList.add(HSFHessianCommand.class);
 
         try {
             if (ClassLoader.getSystemClassLoader().getResource("jdk/jfr/Recording.class") != null) {

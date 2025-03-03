@@ -44,9 +44,9 @@
         <rollingPolicy class="com.alibaba.arthas.deps.ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>/home/admin/logs/arthas/test.%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
-            <maxHistory>2</maxHistory>
-            <maxFileSize>200MB</maxFileSize>
-            <totalSizeCap>1024MB</totalSizeCap>
+            <maxHistory>40</maxHistory>
+            <maxFileSize>512MB</maxFileSize>
+            <totalSizeCap>20480MB</totalSizeCap>
         </rollingPolicy>
     </appender>
 

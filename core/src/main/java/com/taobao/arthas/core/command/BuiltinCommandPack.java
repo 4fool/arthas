@@ -28,6 +28,7 @@ import com.taobao.arthas.core.command.monitor200.WatchCommand;
 import com.taobao.arthas.core.command.monitor200.bigkey.BigKeyCommand;
 import com.taobao.arthas.core.command.monitor200.blocked.BlockedThreadCommand;
 import com.taobao.arthas.core.command.monitor200.jetty.JettyCommand;
+import com.taobao.arthas.core.command.monitor200.mq.ProducerCommand;
 import com.taobao.arthas.core.command.monitor200.sleep.SleepCommand;
 import com.taobao.arthas.core.command.monitor200.test.TestCommand;
 import com.taobao.arthas.core.command.monitor200.tomcat.KeepAliveCommand;
@@ -116,6 +117,10 @@ public class BuiltinCommandPack implements CommandResolver {
         commandClassList.add(SleepCommand.class);
         commandClassList.add(TestCommand.class);
         commandClassList.add(HSFHessianCommand.class);
+
+
+        commandClassList.add(ProducerCommand.class);
+
 
         try {
             if (ClassLoader.getSystemClassLoader().getResource("jdk/jfr/Recording.class") != null) {
